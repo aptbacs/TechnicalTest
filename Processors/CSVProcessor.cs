@@ -68,7 +68,7 @@ namespace TestAPT.Processors
                     {
                         TransactionCode = d.Code ?? "This line is missing a Transaction Code",
                         Errors = ValidationResultToErrorResponse(ex),
-                        LineNumber = content.IndexOf(line)
+                        LineNumber = content.IndexOf(line) + 1
                     };
                     validationResults.Add(err);
                 }

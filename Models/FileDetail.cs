@@ -7,7 +7,6 @@
         public string Name { get; set; }
         public string Reference { get; set; }
         public decimal Amount { get; set; }
-        public int FileUploadId { get; set; }
         public FileUploaded File { get; set; }
     }
 }
