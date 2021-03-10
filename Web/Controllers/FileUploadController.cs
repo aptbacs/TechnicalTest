@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TestAPT.Models;
 using TestAPT.Processors;
@@ -10,6 +11,9 @@ using TestAPT.Resources;
 
 namespace TestAPT.Controllers
 {
+    /// <summary>
+    /// Handles All File upload operations
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class FileUploadController : ControllerBase
@@ -22,22 +26,27 @@ namespace TestAPT.Controllers
             _context = context;
             _host = host;
         }
-
+        /// <summary>
+        /// Allows other services or apps upload a file 
+        /// </summary>
+        /// <typeparam name="IFormFile">type to expect in form-data</typeparam>
+        /// <param name="uploadedFile"></param>
+        /// <returns>returns an instance of FileResponseResource object</returns>
         [HttpPost, DisableRequestSizeLimit]
-        public async Task<ActionResult<FileResponseResource>> Post()
+        public async Task<ActionResult<FileResponseResource>> Post(IFormFile uploadedFile)
         {
             YieldResult result = null;
             try
             {
-                var file = Request.Form.Files[0];
-                var ext = Path.GetExtension(file.FileName);
+                //var file = Request.Form.Files[0];
+                var ext = Path.GetExtension(uploadedFile.FileName);
                 switch (ext)
                 {
                     case ".txt":
-                        result = await new TextFileProcessor().ProcessFile(_host, file);
+                        result = await new TextFileProcessor().ProcessFile(_host, uploadedFile);
                         break;
                     case ".csv":
-                        result = await new CSVProcessor().ProcessFile(_host, file);
+                        result = await new CSVProcessor().ProcessFile(_host, uploadedFile);
                         break;
                     default:
                         return new UnsupportedMediaTypeResult();
