@@ -1,3 +1,4 @@
+
 # APT Technical Test
 
 A big part of what APT does, is translating plain text files into a BACSTEL-IP Standard 18 file format. We do this by using a templating tool that can take almost any type of plain text file.
@@ -88,3 +89,4 @@ definitions:
 
 
 Thanks for your time, we look forward to hearing from you!
+>>>>>>> 6e73e6f55ca4caef144ddf1750b3fe1ccc64b114
