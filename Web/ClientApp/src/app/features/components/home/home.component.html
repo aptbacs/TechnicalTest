@@ -1,0 +1,52 @@
+<section fxLayout="column" fxFlexAlign="stretch">
+  <div fxFlexAlign="center">
+    <p>Welcome to Lebel's APT Application with Material Angular</p>
+  </div>
+
+  <mat-tab-group (selectedTabChange)="executeSelectedChange($event)">
+    <mat-tab label="In this application we are going to work with:">
+      <p>We are going to use different material components to create a simple but nice looking angular app.</p>
+      <p>We will use Code-First EF Core with migrations, Fluent API configurations, Relationships, Model Validations</p>
+      <p>As well as navigation property, Use of Interface for abstraction and strategy pattern for our processor</p>
+      <p>Create Resources for our Angular to use a ResponseWrapper</p>
+      <p>Deal with manushia of working with csv data files with comma-delimited values</p>
+      <p>Deal with manushia of working with csv data files with comma-delimited values</p>
+
+    </mat-tab>
+    <mat-tab label="APT Task Demo - Upload a File">
+      <p>We will consume our .NET Core API with our Angular 11 SPA CRUD client app.</p>
+      <mat-form-field>
+        <div class="fileUploaderCtrl">
+          <mat-toolbar>
+            <!-- Readonly Input to show File names -->
+            <input matInput [(ngModel)]="fileName" readonly name="name" />
+
+            <!-- Browse Button -->
+            <button mat-flat-button color="primary">
+              Browse
+            </button>
+          </mat-toolbar>
+
+          <input type="file" #UploadFileInput id="fileUpload" (change)="uploadFile()" name="fileUpload"
+                 accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel, text/plain" />
+        </div>
+        <div class="progress-wrapper">
+          <mat-progress-bar color="primary" mode="determinate" value={{progress}} *ngIf="progress > 0"></mat-progress-bar>
+        </div>
+      </mat-form-field>
+      <div class="progress-message">
+        <span class="upload" *ngIf="progress">
+          {{progress}}% completed
+        </span>
+        <span [ngClass]="{'warn': fileResponse.errorMessages.length > 0}" *ngIf="message">
+          {{message}}
+        </span>
+      </div>
+    </mat-tab>
+    <mat-tab label="Lessons learnt and Improvements">
+      <p>No experieence can beat due diligence and checking and rechecking results</p>
+      <p>Took a while to get the requirement that one file entry will have many linesDetails, would have saved some time</p>
+      <p>Would have tied up my strategy pattern by passing a startegy class in between t</p>
+    </mat-tab>
+  </mat-tab-group>
+</section>
