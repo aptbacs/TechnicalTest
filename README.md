@@ -86,7 +86,7 @@ definitions:
 
 ## Story 5 - Front End
 - Angular
-- Create a very simple (do not worry how it looks or security) for the user to upload a file
+- Create a very simple (do not worry how it looks) for the user to upload a file
 - Use the front end to make an API call the RESTful API you have built previously
 - Display the error or the success when submitting
 
