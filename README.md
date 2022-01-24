@@ -4,7 +4,7 @@ A big part of what APT does, is translating plain text files into a BACSTEL-IP S
 For this exercise we will be providing a CSV source file containing values delimited by comma. We will need you to build a very simple frontend for the customer to upload the file and a backend RESTful API that will receive the file and save it into a database.
 
 The file fields are per the following order:
-**Code,Name,Reference,Amount**
+**Sort Code, Account Number,Name,Reference,Amount**
 
 -   You should use .NET CORE Web API and Angular to build this web application. We encourage you to build this using the techniques and methodologies that you use every day and     if relevant/practical we would like you to provide these as part of your submission (i.e. unit tests if you're into TDD, a Trello board if you tend to break things down into     tasks Kanban style).
 -   Code-First EF Core with migrations, Fluent API configurations, Relationships, Model Validations
@@ -90,5 +90,16 @@ definitions:
 - Use the front end to make an API call the RESTful API you have built previously
 - Display the error or the success when submitting
 
+## Story 6 - Output
+- Please add an output to your web application.
+- After validations, you should output the csv file into a plain text data file with a CRLF.
+- Your data line should be in the below format:
+		1-6: Destination sort code
+		7-14: Destination account number
+		36-46: Amount expressed in pence
+		65-82: Reference
+		83-100: Account name
+
+All other fields can be prefilled with 0's.
 
 Thanks for your time, we look forward to hearing from you!
