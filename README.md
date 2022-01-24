@@ -6,7 +6,10 @@ For this exercise we will be providing a CSV source file containing values delim
 The file fields are per the following order:
 **Code,Name,Reference,Amount**
 
--   For unit testing we use XUnit and Moq, but feel free to use whatever framework you prefer.
+-   You should use .NET CORE Web API and Angular to build this web application. We encourage you to build this using the techniques and methodologies that you use every day and     if relevant/practical we would like you to provide these as part of your submission (i.e. unit tests if you're into TDD, a Trello board if you tend to break things down into     tasks Kanban style).
+-   Code-First EF Core with migrations, Fluent API configurations, Relationships, Model Validations
+-   Create Resources for our Angular app to use a ResponseWrapper
+-   Show your working with csv data files with comma-delimited values
 -   All stories should be completed with an appropriate amount of testing.
 -   Please create a public repo (GitHub, BitBucket, GitLab etc) and send us the link, make sure to commit regularly so we can see how you came up with the solution.
 -   Remember to be RESTful.
@@ -82,6 +85,7 @@ definitions:
 -   Add appropriate tests and document the endpoint
 
 ## Story 5 - Front End
+- Angular
 - Create a very simple (do not worry how it looks or security) for the user to upload a file
 - Use the front end to make an API call the RESTful API you have built previously
 - Display the error or the success when submitting
