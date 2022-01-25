@@ -91,7 +91,8 @@ definitions:
 - Display the error or the success when submitting
 
 ## Story 6 - Output
-- Please add an output to your web application.
+- Please add an output to your web application
+- The output file should be generated from the data added to the database.
 - After validations, you should output the csv file into a plain text data file with a CRLF.
 - Your data line should be in the below format:
 		1-6: Destination sort code
@@ -100,6 +101,6 @@ definitions:
 		65-82: Reference
 		83-100: Account name
 
-All other fields can be prefilled with 0's.
+All other fields can be padded with blank spaces.
 
 Thanks for your time, we look forward to hearing from you!
