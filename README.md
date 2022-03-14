@@ -92,7 +92,7 @@ definitions:
 - Display the error or the success when submitting
 
 ## Story 6 - Output
-- Please add an output to your web application
+-  Please add an output endpoint to your web application
 - The output file should be generated from the data added to the database.
 - After validations, you should output the csv file into a plain text data file with a CRLF.
 - Your data line should be in the below format:
