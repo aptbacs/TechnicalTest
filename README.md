@@ -75,11 +75,12 @@ definitions:
     -   File Name
     -   Total Amount of the File
     -   File Details
-	    - Code
-	    - Name
-	    - Reference
-	    - Amount
--   Mock a database or add a simple in-memory database (maybe LiteDB) to persist this data.
+	    -  Destination sort code
+	    -  Destination account number
+	    -  Account Name
+	    -  Reference
+	    -  Amount
+-   Create a file based database and include it with your solution.
 -   Produce a unique id for the file.
 -   Produce a unique id for each line in the file
 -   Add appropriate tests and document the endpoint
